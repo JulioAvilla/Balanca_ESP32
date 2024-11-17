@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 60, "left": 123.4, "attrs": {} },
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp1", "top": 278.9, "left": 10, "attrs": {} },
+    {
+      "type": "wokwi-hx711",
+      "id": "cell1",
+      "top": 468.8,
+      "left": 344,
+      "attrs": { "type": "50kg" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 309.4,
+      "left": 270.2,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 207.76, "left": 466.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 264.6, "left": 465.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp1:D18", "cell1:SCK", "limegreen", [ "h28.5", "v154.4" ] ],
+    [ "esp1:D19", "cell1:DT", "yellow", [ "h38.1", "v154" ] ],
+    [ "esp1:D21", "lcd1:SDA", "magenta", [ "h47.7", "v18.6" ] ],
+    [ "cell1:GND", "bb1:bn.4", "black", [ "h0" ] ],
+    [ "vcc1:VCC", "bb1:bp.25", "red", [ "v9.6", "h-48" ] ],
+    [ "gnd1:GND", "bb1:bn.25", "black", [ "v0" ] ],
+    [ "cell1:VCC", "bb1:bp.3", "red", [ "h0" ] ],
+    [ "lcd1:VCC", "bb1:bp.8", "red", [ "h0" ] ],
+    [ "lcd1:GND", "bb1:bn.9", "black", [ "h0" ] ],
+    [ "esp1:D22", "lcd1:SCL", "cyan", [ "h57.3", "v57.3" ] ]
+  ],
+  "dependencies": {}
+}
